@@ -1,5 +1,6 @@
 ﻿using System.Web.Mvc;
 using System.Configuration;
+using System;
 
 namespace ps_90000.Controllers
 {
@@ -16,7 +17,10 @@ namespace ps_90000.Controllers
             var fromConfig = new Models.FromConfig { Message = ConfigurationManager.AppSettings["greeting"] };
             return View(fromConfig);
         }
-
+        public ActionResult Test()
+        {
+            throw new InvalidOperationException("Not implemented (Method Test)");
+        }
         public ActionResult Contact()
         {
             ViewBag.Message = "Your contact page.";

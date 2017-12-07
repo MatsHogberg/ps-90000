@@ -1,7 +1,10 @@
-﻿@{
+﻿@model ps_90000.Models.FromConfig
+@{
     ViewBag.Title = "About";
+    var txt = Model != null ? Model.Message : "Inget";
 }
 <h2>@ViewBag.Title.</h2>
 <h3>@ViewBag.Message</h3>
 
 <p>Use this area to provide additional information.</p>
+<p>@txt</p>

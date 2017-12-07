@@ -1,8 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.Mvc;
+﻿using System.Web.Mvc;
+using System.Configuration;
 
 namespace ps_90000.Controllers
 {
@@ -16,8 +13,8 @@ namespace ps_90000.Controllers
         public ActionResult About()
         {
             ViewBag.Message = "Your application description page.";
-
-            return View();
+            var fromConfig = new Models.FromConfig { Message = ConfigurationManager.AppSettings["greeting"] };
+            return View(fromConfig);
         }
 
         public ActionResult Contact()
